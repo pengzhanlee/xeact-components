@@ -1,6 +1,6 @@
 import React, {PureComponent} from "react";
 import PropTypes from 'prop-types';
-import ReactWebComponent, {dispatchEvent, observed} from "xeact";
+import xeact, {dispatchEvent, observed} from "xeact";
 
 /**
  * Box
@@ -8,7 +8,7 @@ import ReactWebComponent, {dispatchEvent, observed} from "xeact";
  *
  */
 
-@ReactWebComponent('box', {
+@xeact('box', {
     isContainer: true
 })
 export default

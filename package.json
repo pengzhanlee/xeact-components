@@ -1,6 +1,9 @@
 {
     "name": "xeact-components",
     "version": "0.0.1",
+    "scripts": {
+        "build:umd": "cross-env NODE_ENV=production webpack"
+    },
     "dependencies": {
         "prop-types": "^15.5.10",
         "react": "^15.6.1",
@@ -20,7 +23,9 @@
         "babel-preset-latest": "^6.24.1",
         "babel-preset-react": "^6.24.1",
         "babel-preset-stage-0": "^6.24.1",
+        "cross-env": "^5.0.5",
         "jest": "^20.0.4",
+        "path": "^0.12.7",
         "webpack": "^3.5.5"
     }
 }
