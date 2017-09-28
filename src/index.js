@@ -1,4 +1,5 @@
 import {configure} from 'xeact';
+import 'normalize.css';
 
 configure({
     namespace: 'x'

@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import xeact, {dispatchEvent, observed} from "xeact";
 import Grid from 'material-ui/Grid';
 
-const cols = Array.from(Array(12).keys(), (x) => x + 1);
-const spacings = Array.from(Array(5).keys(), (x) => x * 8);
-console.log(spacings);
+const cols = Array.from(new Array(12).keys(), (x) => x + 1);
 const colsPropTypes = PropTypes.oneOf(cols);
 
 @xeact('col', {
