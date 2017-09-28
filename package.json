@@ -2,6 +2,7 @@
     "name": "xeact-components",
     "version": "0.0.1",
     "scripts": {
+        "dev": "cross-env NODE_ENV=development webpack --watch",
         "build:umd": "cross-env NODE_ENV=production webpack"
     },
     "dependencies": {
@@ -26,6 +27,7 @@
         "cross-env": "^5.0.5",
         "jest": "^20.0.4",
         "path": "^0.12.7",
+        "uglifyjs-webpack-plugin": "^0.4.6",
         "webpack": "^3.5.5"
     }
 }
