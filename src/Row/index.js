@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import xeact, {dispatchEvent, observed} from "xeact";
 import Grid from 'material-ui/Grid';
 
-const spacings = [0, 8, 16, 24, 40];
+const {Naked: {propTypes: GridPropTypes}} = Grid;
 
 @xeact('row', {
     isContainer: true
@@ -12,8 +12,14 @@ export default class Row extends PureComponent {
 
     static propTypes = {
 
+        @observed
+        spacing: GridPropTypes.spacing,
+        // spacing: PropTypes.oneOf([0, 8, 16, 24, 40]),
 
-        spacing: PropTypes.oneOf(spacings),
+        @observed
+        align: GridPropTypes.align,
+
+        justify: GridPropTypes.justify,
 
     };
 
@@ -28,11 +34,15 @@ export default class Row extends PureComponent {
     }
 
     render() {
-        let {spacing} = this.props;
+        let {spacing, align} = this.props;
 
-        return <Grid container ref="body"
-                     spacing={spacing}
-        />
+        return <Grid
+            ref="body"
+            container
+            spacing={spacing}
+            align={align}
+        >
+        </Grid>
     }
 
 }

@@ -5,8 +5,6 @@ import {default as MuiButton} from 'material-ui/Button';
 import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles';
 import {withTheme} from 'material-ui/styles';
 
-const theme = createMuiTheme();
-
 /**
  * Box
  * @class

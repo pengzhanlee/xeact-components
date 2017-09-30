@@ -10,7 +10,7 @@ const colsPropTypes = PropTypes.oneOf(cols);
 @xeact('col', {
     isContainer: true
 })
-export default class Row extends PureComponent {
+export default class Col extends PureComponent {
 
     static propTypes = {
 
@@ -49,12 +49,15 @@ export default class Row extends PureComponent {
     render() {
         let {xs, sm, md, lg, xl} = this.props;
 
-        return <Grid ref="body" item
+        return <Grid ref="body"
+                     item
                      xs={xs}
                      sm={sm}
                      md={md}
                      lg={lg}
-                     xl={xl}/>
+                     xl={xl}
+        >
+        </Grid>
     }
 
 }
