@@ -49,15 +49,15 @@ export default class Col extends PureComponent {
     render() {
         let {xs, sm, md, lg, xl} = this.props;
 
-        return <Grid ref="body"
-                     item
-                     xs={xs}
-                     sm={sm}
-                     md={md}
-                     lg={lg}
-                     xl={xl}
-        >
-        </Grid>
+        return <Grid
+            ref="body"
+            item
+            xs={xs}
+            sm={sm}
+            md={md}
+            lg={lg}
+            xl={xl}
+        />
     }
 
 }

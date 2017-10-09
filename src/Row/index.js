@@ -19,6 +19,7 @@ export default class Row extends PureComponent {
         @observed
         align: GridPropTypes.align,
 
+        @observed
         justify: GridPropTypes.justify,
 
     };
@@ -34,15 +35,15 @@ export default class Row extends PureComponent {
     }
 
     render() {
-        let {spacing, align} = this.props;
+        let {spacing, align, justify} = this.props;
 
         return <Grid
             ref="body"
             container
             spacing={spacing}
             align={align}
-        >
-        </Grid>
+            justify={justify}
+        />
     }
 
 }
