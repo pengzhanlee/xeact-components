@@ -102,7 +102,7 @@ class Box extends PureComponent {
             {header &&
             <div className="box-header" onClick={this.titleClick}>{header}</div>
             }
-            <div className="box-body" ref="body" />
+            <div className="box-body" x-ref="body" />
         </div>
     }
 

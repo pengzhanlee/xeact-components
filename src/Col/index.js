@@ -37,7 +37,7 @@ export default class Col extends PureComponent {
     }
 
     componentDidMount() {
-        let col = ReactDom.findDOMNode(this.refs.body);
+        let col = ReactDom.findDOMNode(this);
         let colClassName = col.className.split(' ');
 
         for (let className of colClassName) {
@@ -50,7 +50,7 @@ export default class Col extends PureComponent {
         let {xs, sm, md, lg, xl} = this.props;
 
         return <Grid
-            ref="body"
+            x-ref="body"
             item
             xs={xs}
             sm={sm}

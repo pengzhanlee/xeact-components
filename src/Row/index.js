@@ -38,7 +38,7 @@ export default class Row extends PureComponent {
         let {spacing, align, justify} = this.props;
 
         return <Grid
-            ref="body"
+            x-ref="body"
             container
             spacing={spacing}
             align={align}
