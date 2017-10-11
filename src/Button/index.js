@@ -6,11 +6,6 @@ import {withStyles} from 'material-ui/styles';
 
 const styles = {
     button: {
-        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-        borderRadius: 3,
-        border: 0,
-        color: 'white',
-        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .30)',
     },
 };
 
@@ -32,11 +27,19 @@ export default class Button extends PureComponent {
         @observed
         color: PropTypes.string,
 
+        @observed
+        dense: PropTypes.bool,
+
+        @observed
+        raised: PropTypes.bool,
+
         classes: PropTypes.object
     };
 
     static defaultProps = {
         color: 'primary',
+        dense: false,
+        raised: true,
     };
 
 
@@ -58,9 +61,9 @@ export default class Button extends PureComponent {
     }
 
     render() {
-        let {color, classes} = this.props;
+        let {color, dense, raised, classes} = this.props;
 
-        return <MuiButton raised={true} color={color} className={classes.button} >
+        return <MuiButton dense={dense} raised={raised} color={color} className={classes.button} >
             <span x-ref="body" />
         </MuiButton>
     }
