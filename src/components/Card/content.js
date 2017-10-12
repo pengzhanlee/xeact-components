@@ -2,15 +2,31 @@ import React, {PureComponent} from "react";
 import PropTypes from 'prop-types';
 import xeact, {dispatchEvent, observed} from "xeact";
 import {CardContent as MCardContent} from 'material-ui/Card';
+import {connect} from "react-redux";
+import {SHOW_MODAL} from "../../redux/modules/common/reducer";
 
 @xeact('card-content', {
     isContainer: true
 })
+@connect(
+    state => ({
+    }))
 export default class CardContent extends PureComponent {
 
     static propTypes = {};
 
     static defaultProps = {};
+
+    componentDidMount() {
+        this.props.dispatch({
+            type: SHOW_MODAL,
+            payload: {
+                type: 'success',
+                text: 'haha',
+                timer: 1e3
+            }
+        });
+    }
 
     constructor(props) {
         super(props);

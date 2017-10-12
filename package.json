@@ -11,6 +11,9 @@
         "prop-types": "^15.5.10",
         "react": "^16.0.0",
         "react-dom": "^16.0.0",
+        "react-redux": "^5.0.6",
+        "redux": "^3.7.2",
+        "redux-saga": "^0.15.6",
         "xeact": "file:../../JSWorkspace/xeact"
     },
     "devDependencies": {
@@ -29,9 +32,12 @@
         "cross-env": "^5.0.5",
         "css-loader": "^0.28.7",
         "jest": "^20.0.4",
+        "node-sass": "4.5.0",
         "path": "^0.12.7",
+        "sass-loader": "^6.0.6",
         "style-loader": "^0.18.2",
         "uglifyjs-webpack-plugin": "^0.4.6",
+        "url-loader": "^0.6.2",
         "webpack": "^3.5.5"
     }
 }

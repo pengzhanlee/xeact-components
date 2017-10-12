@@ -26,6 +26,19 @@ module.exports = {
     module: {
         rules: [
             {
+                exclude: [
+                    /\.html$/,
+                    /\.(js|jsx)$/,
+                    /\.(css|scss)$/,
+                    /\.json$/
+                ],
+                loader: 'url-loader',
+                query: {
+                    limit: 10000,
+                    name: 'media/[name].[hash:8].[ext]'
+                }
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: [
@@ -41,6 +54,21 @@ module.exports = {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
             },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                            modules: true,
+                            localIdentName: '[local]--[hash:base64:5]'
+                        }
+                    },
+                    'sass-loader'
+                ]
+            }
         ],
     },
     plugins: production ? [
@@ -95,6 +123,10 @@ module.exports = {
         }
     ],
     resolve: {
+        modules: [
+            './src',
+            'node_modules'
+        ],
         alias: {
         }
     }
