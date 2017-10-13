@@ -2,7 +2,7 @@ import React, {PureComponent} from "react";
 import PropTypes from 'prop-types';
 import xeact, {dispatchEvent, observed} from "xeact";
 import {CardActions as CardActions} from 'material-ui/Card';
-import {withStyles} from 'material-ui/styles';
+import style from "../../theme/style";
 
 const styles = {
     container: {
@@ -14,8 +14,7 @@ const styles = {
     isContainer: true
 })
 
-@withStyles(styles)
-
+@style(styles)
 export default class CardFooter extends PureComponent {
 
     static propTypes = {

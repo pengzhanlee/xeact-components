@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import xeact, {observed} from "xeact";
 import {default as MuiButton} from 'material-ui/Button';
 import {withStyles} from 'material-ui/styles';
+import defaultTheme from 'theme/default';
+import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles';
+import style from 'theme/style';
 
 const styles = {
-    button: {
-    },
+    button: {},
 };
 
 /**
@@ -18,7 +20,7 @@ const styles = {
     isContainer: true
 })
 
-@withStyles(styles)
+@style(styles)
 
 export default class Button extends PureComponent {
 
@@ -61,10 +63,12 @@ export default class Button extends PureComponent {
     }
 
     render() {
-        let {color, dense, raised, classes} = this.props;
+        let {color, dense, raised, classes, theme} = this.props;
 
-        return <MuiButton dense={dense} raised={raised} color={color} className={classes.button} >
-            <span x-ref="body" />
+        console.log(classes, theme);
+
+        return <MuiButton dense={dense} raised={raised} color={color} className={classes.button}>
+            <span x-ref="body"/>
         </MuiButton>
     }
 

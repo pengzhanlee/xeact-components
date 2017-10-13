@@ -4,10 +4,12 @@ import xeact, {dispatchEvent, observed} from "xeact";
 import {CardContent as MCardContent} from 'material-ui/Card';
 import {connect} from "react-redux";
 import {SHOW_MODAL} from "../../redux/modules/common/reducer";
+import style from 'theme/style';
 
 @xeact('card-content', {
     isContainer: true
 })
+@style()
 @connect(
     state => ({
     }))

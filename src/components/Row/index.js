@@ -2,12 +2,14 @@ import React, {PureComponent} from "react";
 import PropTypes from 'prop-types';
 import xeact, {dispatchEvent, observed} from "xeact";
 import Grid from 'material-ui/Grid';
+import style from "../../theme/style";
 
 const {Naked: {propTypes: GridPropTypes}} = Grid;
 
 @xeact('row', {
     isContainer: true
 })
+@style()
 export default class Row extends PureComponent {
 
     static propTypes = {

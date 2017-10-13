@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import PropTypes from 'prop-types';
 import xeact, {dispatchEvent, observed} from "xeact";
 import Grid from 'material-ui/Grid';
+import style from "../../theme/style";
 
 const cols = Array.from(new Array(12).keys(), (x) => x + 1);
 const colsPropTypes = PropTypes.oneOf(cols);
@@ -10,6 +11,7 @@ const colsPropTypes = PropTypes.oneOf(cols);
 @xeact('col', {
     isContainer: true
 })
+@style()
 export default class Col extends PureComponent {
 
     static propTypes = {

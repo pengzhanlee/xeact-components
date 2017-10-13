@@ -2,10 +2,12 @@ import React, {PureComponent} from "react";
 import PropTypes from 'prop-types';
 import xeact, {dispatchEvent, observed} from "xeact";
 import {CardHeader as MCardHeader} from 'material-ui/Card';
+import style from 'theme/style';
 
 @xeact('card-header', {
     isContainer: true
 })
+@style()
 export default class CardHeader extends PureComponent {
 
     static propTypes = {

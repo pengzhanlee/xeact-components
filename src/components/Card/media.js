@@ -2,8 +2,10 @@ import React, {PureComponent} from "react";
 import PropTypes from 'prop-types';
 import xeact, {dispatchEvent, observed} from "xeact";
 import {CardMedia as MCardMedia} from 'material-ui/Card';
+import style from "../../theme/style";
 
 @xeact('card-media', {})
+@style()
 export default class CardMedia extends PureComponent {
 
     static propTypes = {

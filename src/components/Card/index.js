@@ -7,10 +7,12 @@ import './header';
 import './content';
 import './media';
 import './footer';
+import style from "../../theme/style";
 
 @xeact('card', {
     isContainer: true
 })
+@style()
 export default class Card extends PureComponent {
 
     static propTypes = {
