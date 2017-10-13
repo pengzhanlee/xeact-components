@@ -6,6 +6,7 @@ import {withStyles} from 'material-ui/styles';
 import defaultTheme from 'theme/default';
 import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles';
 import style from 'theme/style';
+import {connect} from "react-redux";
 
 const styles = {
     button: {},
@@ -20,7 +21,16 @@ const styles = {
     isContainer: true
 })
 
+
+// @style(styles)
+
+@connect(
+    state => ({
+        modal: state.modal,
+    }))
+// @withStyles(styles)
 @style(styles)
+
 
 export default class Button extends PureComponent {
 
@@ -62,10 +72,11 @@ export default class Button extends PureComponent {
 
     }
 
+    componentWillReceiveProps(nextProps) {
+    }
+
     render() {
         let {color, dense, raised, classes, theme} = this.props;
-
-        console.log(classes, theme);
 
         return <MuiButton dense={dense} raised={raised} color={color} className={classes.button}>
             <span x-ref="body"/>

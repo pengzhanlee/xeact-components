@@ -352,14 +352,10 @@ const defaultTheme = {
     }
 };
 
-export default createMuiTheme({
-    palette: {
-        type: 'light',
-        // primary: purple, // Purple and green play nicely together.
-        // secondary: {
-        //     ...green,
-        //     A400: '#00e677',
-        // },
-        // error: red,
-    },
-});
+export const getTheme = (type) => {
+    return createMuiTheme({
+        palette: {
+            type: type,
+        },
+    });
+};
