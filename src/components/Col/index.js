@@ -34,18 +34,38 @@ export default class Col extends PureComponent {
 
     static defaultProps = {};
 
+    movedClass = new Set();
+
     constructor(props) {
         super(props);
     }
 
-    componentDidMount() {
-        let col = ReactDom.findDOMNode(this);
-        let colClassName = col.className.split(' ');
+    /**
+     * 由于 material-ui 使用子代选择器
+     * 需要将 class 移动到父元素
+     */
+    moveClass() {
+        const col = ReactDom.findDOMNode(this);
+        const colClassName = col.className.split(' ');
+        const parentNode = col.parentNode;
+
+        for(let className of this.movedClass) {
+            parentNode.classList.remove(className);
+        }
 
         for (let className of colClassName) {
-            col.parentNode.classList.add(className);
+            parentNode.classList.add(className);
+            this.movedClass.add(className);
             col.classList.remove(className);
         }
+    }
+
+    componentDidMount() {
+        this.moveClass();
+    }
+
+    componentDidUpdate() {
+        this.moveClass();
     }
 
     render() {
