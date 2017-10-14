@@ -3,12 +3,17 @@ import React, {PureComponent} from 'react';
 import {withStyles} from 'material-ui/styles';
 import defaultTheme from 'theme/default';
 import {connect} from "react-redux";
+import {getInitTheme} from "./default";
 
 /**
  * 组件样式配置
  *
  *  1. css
  *  2. 主题提供
+ *
+ *  关于主题来源
+ *  初始化： 根据 root 的 theme 配置直接获取 theme
+ *  动态切换: redux(store -> theme)
  *
  * @see https://github.com/cssinjs/jss
  * @param styles
@@ -25,7 +30,10 @@ export default function style(styles = {}, options = {}) {
 
             render() {
 
-                const {themeObj} = this.props;
+                let {themeObj} = this.props;
+
+                // init theme
+                themeObj = themeObj || getInitTheme();
 
                 return <MuiThemeProvider theme={themeObj}>
                     <WrappedComponent {...this.props} />

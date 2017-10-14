@@ -352,6 +352,12 @@ const defaultTheme = {
     }
 };
 
+/**
+ * 获取 theme
+ * 可能需要对 type 进行预处理, 如 theme-color 模式
+ * @param type
+ * @returns {Theme<{palette: {type: *}}>}
+ */
 export const getTheme = (type) => {
     return createMuiTheme({
         palette: {
@@ -359,3 +365,21 @@ export const getTheme = (type) => {
         },
     });
 };
+
+let initTheme;
+
+/**
+ * 配置初识主题
+ * 为避免重复渲染 或 ThemeProvider 为空，
+ * root 在拿到 theme 属性后，直接配置 theme,
+ * 此后切换才走 redux
+ * @param type
+ */
+export const configInitTheme = (type) => {
+   initTheme = getTheme(type);
+};
+
+/**
+ * 在 theme 在 store 为空时，从这里获取 theme
+ */
+export const getInitTheme = () => initTheme;
