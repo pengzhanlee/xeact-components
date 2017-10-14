@@ -1,4 +1,5 @@
 import {getTheme} from "../../../theme/default";
+import {put} from 'redux-saga/effects';
 
 export const SWITCH_THEME = '@@xeact/theme/switch';
 export const SWITCH_TO_THEME = '@@xeact/theme/switch/success';

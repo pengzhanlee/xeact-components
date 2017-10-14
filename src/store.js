@@ -1,4 +1,4 @@
-import {applyMiddleware, createStore} from "redux";
+import {applyMiddleware, compose, createStore} from "redux";
 import createSagaMiddleware from "redux-saga";
 import appReducer from "./redux/modules/reducer";
 import initSagas from "./redux/initSagas";
@@ -15,6 +15,9 @@ const middleware = [
 // const composeEnhancers = composeWithDevTools({
 //     realtime: process.env.NODE_ENV === 'development',
 // });
+
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const store = createStore(reducer, /* preloadedState, */ composeEnhancers(
 
 const store = createStore(
     appReducer,

@@ -5,7 +5,8 @@ import xeact, {observed} from "xeact";
 import {MuiThemeProvider} from 'material-ui/styles';
 import store from "../../store";
 import ModalTip from '../ModalTip';
-import {HIDE_MODAL, SWITCH_THEME} from "../../redux/modules/common/reducer";
+import {HIDE_MODAL} from "../../redux/modules/common/reducer";
+import {SWITCH_THEME} from "../../redux/modules/common/theme";
 import {configInitTheme, getInitTheme, getTheme} from "../../theme/default";
 
 @xeact('root', {
