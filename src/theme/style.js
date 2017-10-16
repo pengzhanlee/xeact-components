@@ -1,9 +1,8 @@
 import {MuiThemeProvider} from 'material-ui/styles';
 import React, {PureComponent} from 'react';
 import {withStyles} from 'material-ui/styles';
-import defaultTheme from 'theme/default';
-import {connect} from "react-redux";
 import {getInitTheme} from "./default";
+import connect from "../redux/utils/connect";
 
 /**
  * 组件样式配置

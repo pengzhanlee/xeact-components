@@ -1,10 +1,7 @@
-import React, {PureComponent} from "react";
+import React from "react";
 import PropTypes from 'prop-types';
-import xeact, {observed} from "xeact";
+import xeact, {observed, PureComponent} from "xeact";
 import {default as MuiButton} from 'material-ui/Button';
-import {withStyles} from 'material-ui/styles';
-import defaultTheme from 'theme/default';
-import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles';
 import style from 'theme/style';
 import {connect} from "react-redux";
 
@@ -21,14 +18,11 @@ const styles = {
     isContainer: true
 })
 
-
-// @style(styles)
-
 @connect(
     state => ({
         modal: state.modal,
     }))
-// @withStyles(styles)
+
 @style(styles)
 
 

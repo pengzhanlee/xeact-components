@@ -1,6 +1,6 @@
-import React, {PureComponent} from "react";
+import React from "react";
 import PropTypes from 'prop-types';
-import xeact, {dispatchEvent, observed} from "xeact";
+import xeact, {dispatchEvent, observed, PureComponent} from "xeact";
 import {CardHeader as MCardHeader} from 'material-ui/Card';
 import style from 'theme/style';
 

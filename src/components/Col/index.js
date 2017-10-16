@@ -1,7 +1,7 @@
-import React, {PureComponent} from "react";
+import React from "react";
 import ReactDom from 'react-dom';
 import PropTypes from 'prop-types';
-import xeact, {dispatchEvent, observed} from "xeact";
+import xeact, {dispatchEvent, observed, PureComponent} from "xeact";
 import Grid from 'material-ui/Grid';
 import style from "../../theme/style";
 

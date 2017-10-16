@@ -1,7 +1,7 @@
-import React, {PureComponent} from "react";
+import React from "react";
 import PropTypes from 'prop-types';
 import {connect, Provider} from "react-redux";
-import xeact, {observed} from "xeact";
+import xeact, {observed, PureComponent} from "xeact";
 import {MuiThemeProvider} from 'material-ui/styles';
 import store from "../../store";
 import ModalTip from '../ModalTip';

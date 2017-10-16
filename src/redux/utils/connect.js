@@ -5,7 +5,7 @@ export default function connect(mapStateToProps, mapDispatchToProps = null, merg
 
     return function ConnectComponentFactory(WrappedComponent) {
 
-        // options.withRef = true;
+        options.withRef = true;
 
         return rrConnect(mapStateToProps, mapDispatchToProps, mergeProps, options)(WrappedComponent);
 

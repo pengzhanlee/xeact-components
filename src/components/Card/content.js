@@ -1,6 +1,6 @@
-import React, {PureComponent} from "react";
+import React from "react";
 import PropTypes from 'prop-types';
-import xeact, {dispatchEvent, observed} from "xeact";
+import xeact, {dispatchEvent, observed, PureComponent} from "xeact";
 import {CardContent as MCardContent} from 'material-ui/Card';
 import {connect} from "react-redux";
 import {SHOW_MODAL} from "../../redux/modules/common/reducer";
