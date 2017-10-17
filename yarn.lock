@@ -5047,8 +5047,9 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
-"xeact@file:../../JSWorkspace/xeact":
-  version "0.0.11"
+xeact@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/xeact/-/xeact-0.0.12.tgz#fbb85d82033ee6ef18f23678f2a3292a4b797540"
   dependencies:
     "@webcomponents/webcomponentsjs" "^1.0.13"
     shortid "^2.2.8"

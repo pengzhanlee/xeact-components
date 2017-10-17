@@ -7,15 +7,8 @@ var production = process.env.NODE_ENV === 'production';
 module.exports = {
     entry: {
         'xeact-components': [
-            // './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js',
-            // './node_modules/@webcomponents/webcomponentsjs/webcomponents-sd-ce.js',
             './src/index.js'
         ],
-
-        // ceAdapter: [
-        //     './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js',
-        //     './node_modules/@webcomponents/webcomponentsjs/webcomponents-sd-ce.js',
-        // ]
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -80,47 +73,37 @@ module.exports = {
         }),
 
         new UglifyJSPlugin({
-            // xeact: {
-            //     exclude: [
-            //         path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
-            //         path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/custom-elements-sd-ce.js'),
-            //     ],
-            //     compress: { warnings: false }
-            // }
-
-            // compress: {
-            //     warnings: false
-            // }
-
-            // exclude: /webcomponentsjs/
+            compress: {
+                warnings: false
+            }
         })
     ] : [],
     externals: [
-        {
-            react: {
-                root: 'React',
-                commonjs2: 'react',
-                commonjs: 'react',
-                amd: 'react',
-            },
-        },
-        {
-            'react-dom': {
-                root: 'ReactDOM',
-                commonjs2: 'react-dom',
-                commonjs: 'react-dom',
-                amd: 'react-dom',
-            },
-        },
+        // {
+        //     react: {
+        //         root: 'React',
+        //         commonjs2: 'react',
+        //         commonjs: 'react',
+        //         amd: 'react',
+        //     },
+        // },
+        // {
+        //     'react-dom': {
+        //         root: 'ReactDOM',
+        //         commonjs2: 'react-dom',
+        //         commonjs: 'react-dom',
+        //         amd: 'react-dom',
+        //     },
+        // },
 
-        {
-            xeact: {
-                root: 'xeact',
-                commonjs2: 'xeact',
-                commonjs: 'xeact',
-                amd: 'xeact',
-            },
-        }
+        // {
+        //     xeact: {
+        //         root: 'xeact',
+        //         commonjs2: 'xeact',
+        //         commonjs: 'xeact',
+        //         amd: 'xeact',
+        //     },
+        // }
     ],
     resolve: {
         modules: [
