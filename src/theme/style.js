@@ -34,6 +34,12 @@ export default function style(styles = {}, options = {}) {
                 // init theme
                 themeObj = themeObj || getInitTheme();
 
+                if(!themeObj) {
+                    console.error(`无法找到主题, 请确保\n1. 在所有自定义标签的最外层包裹了 root 标签\n2. 未向 root 指定不存在的主题名\n`, WrappedComponent);
+
+                    return <WrappedComponent {...this.props} />;
+                }
+
                 return <MuiThemeProvider theme={themeObj}>
                     <WrappedComponent {...this.props} />
                 </MuiThemeProvider>
