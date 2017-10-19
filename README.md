@@ -33,3 +33,7 @@ xeact 组件库
     ```
 
 5. 在 src/components 中新增目录，尝试写一个组件，并在 sample 中以 标签的形式调用
+
+6. Sample 这个组件展示了几乎全部写法特性，可供参考
+
+7. [Material-UI](https://material-ui-next.com/getting-started/installation/)
