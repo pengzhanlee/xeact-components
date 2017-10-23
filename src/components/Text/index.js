@@ -14,37 +14,30 @@ import style from "../../theme/style";
 export default class Text extends PureComponent {
 
     static propTypes = {
-
-        @observed
-        color: PropTypes.string
+        tag: PropTypes.string,
+        color: PropTypes.string,
+        type: PropTypes.oneOf(['display4', 'display3', 'display2', 'display1', 'headline', 'title', 'subheading', 'body2', 'body1', 'caption', 'button']),
     };
 
     static defaultProps = {
-
-        color: 'accent'
-
+        tag: 'p',
+        color: 'inherit',
+        type: 'body1',
     };
-
-    @exposed
-    getXXX() {
-        return this.props.color;
-    }
-
-    @exposed
-    get yyy() {
-        return this.props.color;
-    }
 
     constructor(props) {
         super(props);
     }
 
     render() {
-        let {color} = this.props;
+        let {tag, color, type} = this.props;
 
         return <Typography
             x-ref="body"
+
+            component={tag}
             color={color}
+            type={type}
         />
     }
 
