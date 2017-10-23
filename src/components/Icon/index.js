@@ -25,8 +25,18 @@ export default class Icon extends PureComponent {
     componentWillMount() {
         require.ensure([], () => {
             let MIcon;
+
+            let {name} = this.props;
+
+            if(name) {
+                // support lowercase for first letter
+                name = name.replace(/^(\w)(.*)$/, ($0, $1, $2) => {
+                    return $1.toUpperCase() + $2;
+                });
+            }
+
             try {
-                MIcon = require(`material-ui-icons/${this.props.name}.js`);
+                MIcon = require(`material-ui-icons/${name}.js`);
             } catch (e) {
                 console.error(
                     `Icon load error: '${this.props.name}' not found.
