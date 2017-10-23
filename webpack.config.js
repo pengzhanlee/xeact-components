@@ -14,7 +14,9 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: production ? '[name].min.js' : '[name].js',
         library: 'xeact-components',
-        libraryTarget: 'umd'
+        libraryTarget: 'umd',
+
+        publicPath: '/xeact-components/dist/'
     },
     module: {
         rules: [
