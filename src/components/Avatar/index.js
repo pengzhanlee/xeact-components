@@ -2,34 +2,36 @@ import React from "react";
 import PropTypes from 'prop-types';
 import xeact, {observed, PureComponent} from "xeact";
 import style from "../../theme/style";
-import {default as MPaper} from 'material-ui/Paper';
+import {default as MAvatar} from 'material-ui/Avatar';
 
-@xeact('paper', {
+@xeact('avatar', {
     isContainer: true
 })
 @style()
-export default class Paper extends PureComponent {
+export default class Avatar extends PureComponent {
 
     static propTypes = {
+
+        @observed
+        alt: PropTypes.string,
 
         tag: PropTypes.string,
 
         // Shadow depth, corresponds to dp in the spec. It's accepting values between 0 and 24 inclusive.
         @observed
-        elevation: PropTypes.number,
+        sizes: PropTypes.string,
 
         // If true, rounded corners are disabled.
         @observed
-        square: PropTypes.bool,
+        src: PropTypes.string,
+
+        @observed
+        srcSet: PropTypes.string,
 
     };
 
     static defaultProps = {
         tag: 'div',
-
-        elevation: 2,
-
-        square: false,
     };
 
     constructor(props) {
@@ -37,9 +39,14 @@ export default class Paper extends PureComponent {
     }
 
     render() {
-        let {tag, elevation, square} = this.props;
+        let {tag, alt, src} = this.props;
 
-        return <MPaper x-ref="body" component={tag} elevation={elevation} square={square} />
+        return <MAvatar x-ref="body"
+                        component={tag}
+                        alt={alt}
+                        src={src}
+
+        />
     }
 
 }

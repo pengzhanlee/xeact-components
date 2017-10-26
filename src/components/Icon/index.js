@@ -7,7 +7,7 @@ import style from "../../theme/style";
 @style()
 export default class Icon extends PureComponent {
 
-    static DISPLAY_MODE = 'inline';
+    static DISPLAY_MODE = 'flex';
 
     static propTypes = {
         name: PropTypes.string,
