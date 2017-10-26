@@ -2,6 +2,7 @@ import Root from './Root';
 import Row from './Row';
 import Col from './Col';
 import Card from './Card';
+import Paper from './Paper';
 import Sample from './Sample';
 
 import Box from './Box';
