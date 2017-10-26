@@ -4,6 +4,7 @@ import Col from './Col';
 import Card from './Card';
 import Paper from './Paper';
 import Avatar from './Avatar';
+import Dialog from './Dialog';
 import Sample from './Sample';
 
 import Box from './Box';
