@@ -43,6 +43,10 @@ export default class Dialog extends PureComponent {
         this.close();
     }
 
+    componentWillMount() {
+        this.__childFragment = this.props.children;
+    }
+
     componentWillUpdate(nextProps, nextState) {
         const {open} = nextState;
 
@@ -68,8 +72,18 @@ export default class Dialog extends PureComponent {
         if ((prevState.open !== open) && open) {
             const dialog = ReactDom.findDOMNode(this.refs.dialog);
             const body = dialog.querySelector('[x-ref=body]');
-            body.appendChild(this.__childFragment || this.props.children);
+            body.appendChild(this.__childFragment);
         }
+    }
+
+    @exposed
+    queryNode(selector) {
+        return this.__childFragment.querySelector(selector);
+    }
+
+    @exposed
+    queryNodes(selector) {
+        return this.__childFragment.querySelectorAll(selector);
     }
 
     render() {
