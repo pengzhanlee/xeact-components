@@ -4,7 +4,11 @@ import Col from './Col';
 import Card from './Card';
 import Paper from './Paper';
 import Avatar from './Avatar';
+
 import Dialog from './Dialog';
+import DialogTitle from './Dialog/title';
+import DialogContent from './Dialog/content';
+
 import Sample from './Sample';
 
 import Box from './Box';
