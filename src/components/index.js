@@ -8,6 +8,7 @@ import Avatar from './Avatar';
 import Dialog from './Dialog';
 import DialogTitle from './Dialog/title';
 import DialogContent from './Dialog/content';
+import DialogAction from './Dialog/action';
 
 import Sample from './Sample';
 
