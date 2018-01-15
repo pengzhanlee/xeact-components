@@ -6,7 +6,7 @@ import {Icon as AntIcon} from 'antd';
 @xeact('icon')
 export default class Icon extends PureComponent {
 
-    static DISPLAY_MODE = 'flex';
+    static DISPLAY_MODE = 'inline-block';
 
     static propTypes = {
 

@@ -1,13 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import xeact, {observed, PureComponent} from "xeact";
-import {default as MuiButton} from 'material-ui/Button';
+import {button as AntButton} from 'antd';
 import style from 'theme/style';
 import {connect} from "react-redux";
-
-const styles = {
-    button: {},
-};
 
 /**
  * Button
@@ -18,20 +14,16 @@ const styles = {
     isContainer: true
 })
 
-@connect(
-    state => ({
-        modal: state.modal,
-    }))
-
-@style(styles)
-
-
 export default class Button extends PureComponent {
 
     static propTypes = {
 
         @observed
-        color: PropTypes.string,
+        type: PropTypes.string,
+
+        @observed
+        loading: PropTypes.bool,
+
 
         @observed
         dense: PropTypes.bool,
@@ -43,7 +35,6 @@ export default class Button extends PureComponent {
     };
 
     static defaultProps = {
-        color: 'primary',
         dense: false,
         raised: true,
     };
@@ -53,28 +44,12 @@ export default class Button extends PureComponent {
         super(props);
     }
 
-    componentWillUpdate() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillUnmount() {
-    }
-
-    componentWillMount() {
-
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
     render() {
-        let {color, dense, raised, classes, theme} = this.props;
+        let {type, loading, dense, raised, classes, theme} = this.props;
 
-        return <MuiButton dense={dense} raised={raised} color={color} className={classes.button}>
-            <span x-ref="body"/>
-        </MuiButton>
+        return <AntButton type={type} loading={loading}>
+            <span x-ref="body" />
+        </AntButton>;
     }
 
 }
