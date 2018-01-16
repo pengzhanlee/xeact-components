@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import xeact, {dispatchEvent, observed, PureComponent} from "xeact";
 import Grid from 'material-ui/Grid';
 import style from "../../theme/style";
+import {Col as AntCol} from 'antd';
 
 const cols = Array.from(new Array(12).keys(), (x) => x + 1);
 const colsPropTypes = PropTypes.oneOf(cols);
@@ -17,19 +18,21 @@ export default class Col extends PureComponent {
     static propTypes = {
 
         // @observed
-        xs: colsPropTypes,
+        xs: PropTypes.number,
 
         // @observed
-        sm: colsPropTypes,
+        sm: PropTypes.number,
 
         // @observed
-        md: colsPropTypes,
+        md: PropTypes.number,
 
         // @observed
-        lg: colsPropTypes,
+        lg: PropTypes.number,
 
         // @observed
-        xl: colsPropTypes,
+        xl: PropTypes.number,
+
+        span: PropTypes.number,
     };
 
     static defaultProps = {};
@@ -41,15 +44,14 @@ export default class Col extends PureComponent {
     }
 
     /**
-     * 由于 material-ui 使用子代选择器
-     * 需要将 class 移动到父元素
+     * flex 布局需要将 class 移动到父元素
      */
     moveClass() {
         const col = ReactDom.findDOMNode(this);
         const colClassName = col.className.split(' ');
         const parentNode = col.parentNode;
 
-        for(let className of this.movedClass) {
+        for (let className of this.movedClass) {
             parentNode.classList.remove(className);
         }
 
@@ -58,6 +60,12 @@ export default class Col extends PureComponent {
             this.movedClass.add(className);
             col.classList.remove(className);
         }
+
+        // 根据 row 的 gutter 设置 padding
+        Object.assign(col.style, {
+            paddingLeft: `${Math.abs(parseInt(parentNode.parentNode.style.marginLeft, 10))}px`,
+            paddingRight: `${Math.abs(parseInt(parentNode.parentNode.style.marginRight, 10))}px`,
+        });
     }
 
     componentDidMount() {
@@ -69,16 +77,16 @@ export default class Col extends PureComponent {
     }
 
     render() {
-        let {xs, sm, md, lg, xl} = this.props;
+        let {xs, sm, md, lg, xl, span} = this.props;
 
-        return <Grid
+        return <AntCol
             x-ref="body"
-            item
             xs={xs}
             sm={sm}
             md={md}
             lg={lg}
             xl={xl}
+            span={span}
         />
     }
 

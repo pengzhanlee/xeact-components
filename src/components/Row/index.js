@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import xeact, {dispatchEvent, observed, PureComponent} from "xeact";
-import Grid from 'material-ui/Grid';
 import style from "../../theme/style";
 
-const {Naked: {propTypes: GridPropTypes}} = Grid;
+import {Row as AntRow} from 'antd';
 
 @xeact('row', {
     isContainer: true
@@ -15,14 +14,14 @@ export default class Row extends PureComponent {
     static propTypes = {
 
         @observed
-        spacing: GridPropTypes.spacing,
+        align: PropTypes.string,
         // spacing: PropTypes.oneOf([0, 8, 16, 24, 40]),
 
         @observed
-        align: GridPropTypes.align,
+        gutter: PropTypes.number,
 
         @observed
-        justify: GridPropTypes.justify,
+        justify: PropTypes.string,
 
     };
 
@@ -37,14 +36,14 @@ export default class Row extends PureComponent {
     }
 
     render() {
-        let {spacing, align, justify} = this.props;
+        let {align, gutter, justify} = this.props;
 
-        return <Grid
+        return <AntRow
             x-ref="body"
-            container
-            spacing={spacing}
             align={align}
+            gutter={gutter}
             justify={justify}
+            type={'flex'}
         />
     }
 
