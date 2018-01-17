@@ -1,6 +1,13 @@
 import Root from './Root';
-import Row from './Row';
-import Col from './Col';
+
+import Layout from './Layout';
+import Header from './Layout/Header';
+import Sidebar from './Layout/Sidebar';
+import Content from './Layout/Content';
+import Footer from './Layout/Footer';
+import Row from './Layout/Row';
+import Col from './Layout/Col';
+
 import Card from './Card';
 import Paper from './Paper';
 import Avatar from './Avatar';

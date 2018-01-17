@@ -1,14 +1,11 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import xeact, {dispatchEvent, observed, PureComponent} from "xeact";
-import style from "../../theme/style";
-
+import xeact, {observed, PureComponent} from "xeact";
 import {Row as AntRow} from 'antd';
 
 @xeact('row', {
     isContainer: true
 })
-@style()
 export default class Row extends PureComponent {
 
     static propTypes = {
