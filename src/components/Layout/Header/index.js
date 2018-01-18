@@ -7,7 +7,7 @@ import {Layout} from 'antd';
     isContainer: true,
     raiseClassName: true,
 })
-export default class Row extends PureComponent {
+export default class Header extends PureComponent {
 
     static propTypes = {
 

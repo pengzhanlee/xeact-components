@@ -1,22 +1,18 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import xeact, {observed, PureComponent} from "xeact";
+import xeact, {PureComponent} from "xeact";
 import {Layout} from 'antd';
+import Icon from "../../Icon";
+
 
 @xeact('sidebar', {
     isContainer: true,
-    raiseClassName: true,
+    raiseClassName: false,
 })
 export default class Sidebar extends PureComponent {
 
-    static propTypes = {
+    static propTypes = {};
 
-
-    };
-
-    static defaultProps = {
-
-    };
+    static defaultProps = {};
 
     constructor(props) {
         super(props);
@@ -26,8 +22,10 @@ export default class Sidebar extends PureComponent {
         let {align, gutter, justify} = this.props;
 
         return <Layout.Sider
-            x-ref="body"
-        />
+            breakpoint={'sm'}
+        >
+            <div x-ref="body" />
+        </Layout.Sider>
     }
 
 }
