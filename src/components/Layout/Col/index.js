@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDom from 'react-dom';
 import PropTypes from 'prop-types';
-import xeact, {dispatchEvent, observed, PureComponent, getParent} from "xeact";
+import xeact, {dispatchEvent, observed, PureComponent, XeactDOM} from "xeact";
 import {Col as AntCol} from 'antd';
 
 @xeact('col', {
@@ -41,7 +41,7 @@ export default class Col extends PureComponent {
      */
     setPadding() {
         const col = ReactDom.findDOMNode(this);
-        const parent = getParent(this).root;
+        const parent = XeactDOM.getParent(this).root;
 
         Object.assign(col.style, {
             paddingLeft: `${Math.abs(parseInt(parent.style.marginLeft, 10))}px`,

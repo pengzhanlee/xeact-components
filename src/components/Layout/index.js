@@ -1,15 +1,16 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import xeact, {observed, PureComponent} from "xeact";
+import xeact, {observed, PureComponent, XeactDOM} from "xeact";
 import {Layout as AntLayout} from 'antd';
+import * as ReactDOM from "react-dom";
+import Sidebar from "./Sidebar";
 
 @xeact('layout', {
-    isContainer: true
+    isContainer: true,
 })
-export default class Row extends PureComponent {
+export default class Layout extends PureComponent {
 
     static propTypes = {
-
 
     };
 
@@ -19,6 +20,13 @@ export default class Row extends PureComponent {
 
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        const dom = ReactDOM.findDOMNode(this);
+        if(XeactDOM.hasChildOfTag(this, Sidebar.tagName)) {
+            dom.classList.add('ant-layout-has-sider');
+        }
     }
 
     render() {

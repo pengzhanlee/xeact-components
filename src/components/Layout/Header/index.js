@@ -4,7 +4,8 @@ import xeact, {observed, PureComponent} from "xeact";
 import {Layout} from 'antd';
 
 @xeact('header', {
-    isContainer: true
+    isContainer: true,
+    raiseClassName: true,
 })
 export default class Row extends PureComponent {
 

@@ -4,7 +4,8 @@ import xeact, {observed, PureComponent} from "xeact";
 import {Layout} from 'antd';
 
 @xeact('footer', {
-    isContainer: true
+    isContainer: true,
+    raiseClassName: true,
 })
 export default class Footer extends PureComponent {
 
