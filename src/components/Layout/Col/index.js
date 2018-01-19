@@ -41,12 +41,14 @@ export default class Col extends PureComponent {
      */
     setPadding() {
         const col = ReactDom.findDOMNode(this);
-        const parent = XeactDOM.getParent(this).root;
+        const parent = XeactDOM.getParent(this).container;
 
-        Object.assign(col.style, {
-            paddingLeft: `${Math.abs(parseInt(parent.style.marginLeft, 10))}px`,
-            paddingRight: `${Math.abs(parseInt(parent.style.marginRight, 10))}px`,
-        });
+        if(parent) {
+            Object.assign(col.style, {
+                paddingLeft: `${Math.abs(parseInt(parent.style.marginLeft, 10))}px`,
+                paddingRight: `${Math.abs(parseInt(parent.style.marginRight, 10))}px`,
+            });
+        }
     }
 
     componentDidMount() {

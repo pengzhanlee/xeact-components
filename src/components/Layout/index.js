@@ -5,7 +5,9 @@ import {Layout as AntLayout} from 'antd';
 import * as ReactDOM from "react-dom";
 import Sidebar from "./Sidebar";
 
-@xeact('layout', {
+const tagName = 'layout';
+
+@xeact(tagName, {
     isContainer: true,
 })
 export default class Layout extends PureComponent {

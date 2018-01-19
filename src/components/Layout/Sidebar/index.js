@@ -6,7 +6,7 @@ import Icon from "../../Icon";
 
 @xeact('sidebar', {
     isContainer: true,
-    raiseClassName: false,
+    raiseClassName: true,
 })
 export default class Sidebar extends PureComponent {
 
