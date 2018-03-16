@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import {connect, Provider} from "react-redux";
 import xeact, {observed, PureComponent} from "xeact";
 import store from "../../store";
-import ModalTip from '../ModalTip';
-import {HIDE_MODAL} from "../../redux/modules/common/reducer";
 
 @xeact('root', {
     isContainer: true
@@ -62,19 +60,7 @@ export default class Root extends PureComponent {
         let {modal, dispatch} = this.props;
 
         return <Provider store={store}>
-            <div>
-                <div x-ref="body"/>
-
-                <ModalTip
-                    {...modal.payload}
-                    show={modal.payload.show || false}
-                    onRequestDismiss={() => {
-                        dispatch({
-                            type: HIDE_MODAL
-                        });
-                    }}
-                />
-            </div>
+            <div x-ref="body"/>
         </Provider>
     }
 }

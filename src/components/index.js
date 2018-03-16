@@ -15,12 +15,12 @@ import Sample from './Sample';
 
 import Box from './Box';
 
-import {default as XButton} from './Button/x';
+export {default as XButton} from './Button/x';
 
-import {default as Button} from './Button';
+export {default as Button} from './Button';
 
-import {default as XIcon} from './Icon/x';
+export {default as XIcon} from './Icon/x';
 
-import {default as Icon} from './Icon';
+export {default as Icon} from './Icon';
 
 export * as style from 'antd/dist/antd.css';

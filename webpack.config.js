@@ -1,22 +1,25 @@
 const path = require('path');
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const theme =  require('./src/styles/theme');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const production = process.env.NODE_ENV === 'production';
 
-var production = process.env.NODE_ENV === 'production';
+const extractAntd = new ExtractTextPlugin({
+    filename: path.resolve(__dirname, 'dist/css/base.[contenthash].css')
+});
 
 module.exports = {
     entry: {
-        'xeact-components': [
+        'ola-ui': [
             './src/index.js'
         ],
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: production ? '[name].min.js' : '[name].js',
-        library: 'xeact-components',
+        library: 'ola-ui',
         libraryTarget: 'umd',
-
-        publicPath: '/xeact-components/dist/'
     },
     module: {
         rules: [
@@ -63,10 +66,37 @@ module.exports = {
                     },
                     'sass-loader'
                 ]
+            },
+            {
+                test: /\.less$/,
+                use: extractAntd.extract({
+                    fallback: 'style-loader',
+                    use: [{
+                        loader: "css-loader",
+                        options: {
+                            minimize: true,
+                            sourceMap: true,
+                            importLoaders: 1,
+                            modules: false,
+                            localIdentName: '[local]--[hash:base64:5]'
+                        }
+                    }, {
+                        loader: "less-loader",
+                        options: {
+                            sourceMap: true,
+                            modifyVars: theme,
+                            paths: [
+                                path.resolve(__dirname, "node_modules")
+                            ]
+                        }
+                    }]
+                })
             }
         ],
     },
     plugins: production ? [
+
+        extractAntd,
 
         new webpack.DefinePlugin({
             'process.env': {
@@ -79,7 +109,9 @@ module.exports = {
                 warnings: false
             }
         })
-    ] : [],
+    ] : [
+        extractAntd,
+    ],
     externals: [
         {
             react: {
@@ -112,7 +144,6 @@ module.exports = {
             './src',
             'node_modules'
         ],
-        alias: {
-        }
+        alias: {}
     }
 };
