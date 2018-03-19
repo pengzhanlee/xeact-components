@@ -9,3 +9,7 @@ configure({
 });
 
 export {default as Button} from './components/Button';
+
+export {default as Col} from './components/Layout/Col';
+
+export {default as Row} from './components/Layout/Row';
