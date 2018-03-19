@@ -20,3 +20,7 @@ export {default as Table} from './components/Table';
 
 export {default as Pagination} from './components/Pagination';
 
+export {default as Checkbox} from './components/Checkbox';
+
+export {default as message} from './components/Message';
+
