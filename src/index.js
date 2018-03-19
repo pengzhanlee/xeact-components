@@ -24,3 +24,7 @@ export {default as Checkbox} from './components/Checkbox';
 
 export {default as message} from './components/Message';
 
+export {default as Modal} from './components/Modal';
+
+export {default as Select} from './components/Select';
+
