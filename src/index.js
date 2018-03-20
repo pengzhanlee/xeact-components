@@ -25,3 +25,5 @@ export {default as Modal} from './components/Modal';
 
 export {default as Select} from './components/Select';
 
+export {default as Tabs} from './components/Tabs';
+

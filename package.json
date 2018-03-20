@@ -1,6 +1,6 @@
 {
   "name": "ola-ui",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --watch",
     "build": "npm run remove-dist && npm run build:commonjs && npm run build:umd && npm run build:min",
