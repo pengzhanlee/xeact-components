@@ -14,7 +14,7 @@
     "prop-types": "^15.5.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "xeact": "file:../xeact"
+    "xeact": "^0.0.19"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
