@@ -99,8 +99,8 @@ export default class Sample extends PureComponent {
 
     return <div>
       <h2 x-ref="body"/>
-      <p onClick={this.start} className={classes.trigger}>点击我开始和你打招呼 ({indicator})</p>
-      {greetTimes > 0 && <p>{say}...{greetTimes}</p>}
+      <button onClick={this.start} className={`btn btn-primary btn-sm`}>点击我开始和你打招呼 ({indicator})</button>
+      <p>{say}...{greetTimes}</p>
     </div>
   }
 

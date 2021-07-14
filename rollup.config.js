@@ -4,6 +4,7 @@ import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import {terser} from "rollup-plugin-terser";
+import postcss from 'rollup-plugin-postcss';
 
 const isProd = process.env.NODE_ENV === 'production';
 const extensions = ['.js'];
@@ -23,6 +24,9 @@ const plugins = [
   commonjs(),
   replace({
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+  }),
+  postcss({
+    extract: true,
   }),
   (isProd && terser())
 ];

@@ -1,4 +1,5 @@
 import {configure} from 'xeact';
+import "tailwindcss/tailwind.css";
 
 configure({});
 
