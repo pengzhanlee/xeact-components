@@ -6,7 +6,7 @@ import xeact, {dispatchEvent, exposed, observed, PureComponent} from "xeact";
 // 声明组件对应的标签名 'sample' (x-sample)
 // 且是容器类组件
 @xeact('sample', {
-    isContainer: true
+  isContainer: true
 })
 
 // 定义样式, 参数可以 object 或 function
@@ -27,85 +27,81 @@ import xeact, {dispatchEvent, exposed, observed, PureComponent} from "xeact";
  */
 export default class Sample extends PureComponent {
 
-    static propTypes = {
+  static propTypes = {
 
-        // 观察一个属性变化
-        @observed
-        say: PropTypes.string
+    // 观察一个属性变化
+    @observed
+    say: PropTypes.string
 
-    };
+  };
 
-    static defaultProps = {
-        say: `I'm Sample Component.`
-    };
+  static defaultProps = {
+    say: `I'm Sample Component.`
+  };
 
-    state = {
-        greetTimes: 0,
-        started: false,
-        indicator: ''
-    };
+  state = {
+    greetTimes: 0,
+    started: false,
+    indicator: ''
+  };
 
-    // 向 dom 暴露一个 setter 方法
-    @exposed
-    set indicator(indicator) {
-        this.setState({
-            indicator
-        });
-    }
+  // 向 dom 暴露一个 setter 方法
+  @exposed
+  set indicator(indicator) {
+    this.setState({
+      indicator
+    });
+  }
 
-    // 向 dom 暴露一个 getter 方法
-    @exposed
-    get indicator() {
-        return this.state.indicator;
-    }
+  // 向 dom 暴露一个 getter 方法
+  @exposed
+  get indicator() {
+    return this.state.indicator;
+  }
 
-    // 向 dom 暴露一个 普通 方法
-    @exposed
-    getIndicator() {
-        return this.state.indicator;
-    }
+  // 向 dom 暴露一个 普通 方法
+  @exposed
+  getIndicator() {
+    return this.state.indicator;
+  }
 
 
-    @autobind
-    start() {
+  @autobind
+  start() {
 
-        if (this.state.started) return;
+    if (this.state.started) return;
 
-        this.setState({
-            started: true
-        });
+    this.setState({
+      started: true
+    });
 
-        setInterval(() => {
-            const {greetTimes} = this.state;
+    setInterval(() => {
+      const {greetTimes} = this.state;
 
-            this.setState({
-                greetTimes: greetTimes + 1,
-            });
+      this.setState({
+        greetTimes: greetTimes + 1,
+      });
 
-            // 向 dom 发送事件 'greeting'， 并携带相关数据
-            dispatchEvent(this, 'greeting', {
-                greetTimes: greetTimes + 1
-            });
-        }, 1e3);
-    }
+      // 向 dom 发送事件 'greeting'， 并携带相关数据
+      dispatchEvent(this, 'greeting', {
+        greetTimes: greetTimes + 1
+      });
+    }, 1e3);
+  }
 
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        const {say, classes} = this.props;
-        const {greetTimes, indicator} = this.state;
+  render() {
+    const {say, classes = {}} = this.props;
+    const {greetTimes, indicator} = this.state;
 
-        return <div>
-            <h2 x-ref="body"/>
-            <p onClick={this.start} className={classes.trigger}>点击我开始和你打招呼 ({indicator})</p>
-            {
-                Array(greetTimes).fill().map((i, index) =>
-                    <p key={index}>{say}...{greetTimes - index}</p>
-                )
-            }
-        </div>
-    }
+    return <div>
+      <h2 x-ref="body"/>
+      <p onClick={this.start} className={classes.trigger}>点击我开始和你打招呼 ({indicator})</p>
+      {greetTimes > 0 && <p>{say}...{greetTimes}</p>}
+    </div>
+  }
 
 }
