@@ -5,15 +5,15 @@ import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import {terser} from "rollup-plugin-terser";
 import postcss from 'rollup-plugin-postcss';
+import path from 'path';
 
 const isProd = process.env.NODE_ENV === 'production';
 const extensions = ['.js'];
 const input = 'src/index.js';
-const external = Object.keys(pkg.peerDependencies || {});
 
 const plugins = [
   nodeResolve({
-    extensions,
+    extensions: ['.js', '.jsx', 'mjs'],
     browser: true
   }),
   babel({
@@ -21,8 +21,11 @@ const plugins = [
     babelHelpers: 'bundled',
     extensions,
   }),
-  commonjs(),
+  commonjs({
+    include: ['node_modules/**']
+  }),
   replace({
+    preventAssignment: false,
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
   }),
   postcss({
@@ -41,6 +44,5 @@ export default [
       sourcemap: true,
     },
     plugins,
-    external
   },
 ];

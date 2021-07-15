@@ -11,10 +11,11 @@
   "main": "dist/index.js",
   "dependencies": {
     "autobind-decorator": "^2.1.0",
+    "classnames": "^2.3.1",
     "prop-types": "^15.5.10",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "xeact": "^0.0.19"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "xeact": "^0.0.20"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",

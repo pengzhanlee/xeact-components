@@ -1,7 +1,7 @@
-import React from "react";
+import React, {PureComponent} from "react";
 import PropTypes from 'prop-types';
 import autobind from 'autobind-decorator';
-import xeact, {dispatchEvent, exposed, observed, PureComponent} from "xeact";
+import xeact, {dispatchEvent, exposed, observed} from "xeact";
 
 // 声明组件对应的标签名 'sample' (x-sample)
 // 且是容器类组件
@@ -27,10 +27,10 @@ import xeact, {dispatchEvent, exposed, observed, PureComponent} from "xeact";
  */
 export default class Sample extends PureComponent {
 
-  static propTypes = {
+  static observedAttributes = {
 
     // 观察一个属性变化
-    @observed
+    // @observed
     say: PropTypes.string
 
   };
@@ -99,7 +99,7 @@ export default class Sample extends PureComponent {
 
     return <div>
       <h2 x-ref="body"/>
-      <button onClick={this.start} className={`btn btn-primary btn-sm`}>点击我开始和你打招呼 ({indicator})</button>
+      <button onClick={this.start} className={`btn btn-primary btn-sm`}>Ciao ({indicator})</button>
       <p>{say}...{greetTimes}</p>
     </div>
   }

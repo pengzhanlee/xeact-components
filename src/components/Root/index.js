@@ -28,12 +28,6 @@ export default class Root extends PureComponent {
    */
   switchTheme() {
     const {dispatch, theme} = this.props;
-
-  }
-
-  componentWillMount() {
-    const {theme} = this.props;
-    // 初始化 theme
   }
 
   componentDidUpdate(prevProps) {
@@ -41,9 +35,6 @@ export default class Root extends PureComponent {
       // theme switch from attribute(prop)
       this.switchTheme();
     }
-  }
-
-  componentDidMount() {
   }
 
   render() {

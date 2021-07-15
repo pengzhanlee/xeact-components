@@ -37,11 +37,6 @@ export default class Box extends PureComponent {
         this.titleClick = this.titleClick.bind(this);
     }
 
-    componentWillUpdate() {
-        // console.log(22);
-        // ReactDOM.findDOMNode(this.refs.body).appendChild(this.props.children);
-    }
-
     componentDidMount() {
         let {children} = this.props;
 
@@ -76,13 +71,6 @@ export default class Box extends PureComponent {
         // ReactDOM.findDOMNode(this).addEventListener('change', (a, b, c) => {
         //     console.log('change', a, b, c);
         // });
-    }
-
-    componentWillUnmount() {
-    }
-
-    componentWillMount() {
-
     }
 
     titleClick() {
