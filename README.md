@@ -1,6 +1,6 @@
 # xeact-components
 
-xeact 组件库
+xeact 示例组件库
 
 ## 如何开始
 
