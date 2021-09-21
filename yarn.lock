@@ -5071,8 +5071,9 @@ tmp@^0.2.1:
     rimraf "^3.0.0"
 
 tmpl@1.0.x:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.4.tgz#23640dd7b42d00433911140820e5cf440e521dd1"
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.5.tgz#8683e0b902bb9c20c4f726e3c0b69f36518c07cc"
+  integrity sha512-3f0uOEAQwIqGuWW2MVzYg8fV/QNnc/IpuJNG837rLuczAaLVHslWHZQj4IGiEl5Hs3kkbhwL9Ab7Hrsmuj+Smw==
 
 to-fast-properties@^1.0.3:
   version "1.0.3"
@@ -5321,10 +5322,10 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
-xeact@^0.0.20:
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/xeact/-/xeact-0.0.20.tgz#dc101ed930521b81aad8bfe9112d7bb68c4acee2"
-  integrity sha512-ZbpafLHPdNLPpuySIBYTXftA2Ho4r/HMOFwbF6KHqNjZYPo/e7HxfjR3KaAMCmJfE7+97h263WLaRcv3Jxq82Q==
+xeact@^0.0.21:
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/xeact/-/xeact-0.0.21.tgz#11441877983e52376e40dbaaf7378f471e02f8b8"
+  integrity sha512-wQI9eCHZfBQSfcCvY7h7LFLsQr29bvNKqlX2no9lCnFtqGBi42umEjA+lyyOnxPWpdg1pttTYQUx0MNuiOyZuw==
   dependencies:
     nanoid "^3.1.23"
 
