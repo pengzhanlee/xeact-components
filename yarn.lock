@@ -3616,9 +3616,9 @@ ms@2.1.2:
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
 nanoid@^3.1.23:
-  version "3.1.23"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.23.tgz#f744086ce7c2bc47ee0a8472574d5c78e4183a81"
-  integrity sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.2.0.tgz#62667522da6673971cca916a6d3eff3f415ff80c"
+  integrity sha512-fmsZYa9lpn69Ad5eDn7FMcnnSR+8R34W9qJEijxYhTbfOWzr22n1QxCMzXLK+ODyW2973V3Fux959iQoUxzUIA==
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -5321,10 +5321,10 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
-xeact@^0.0.20:
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/xeact/-/xeact-0.0.20.tgz#dc101ed930521b81aad8bfe9112d7bb68c4acee2"
-  integrity sha512-ZbpafLHPdNLPpuySIBYTXftA2Ho4r/HMOFwbF6KHqNjZYPo/e7HxfjR3KaAMCmJfE7+97h263WLaRcv3Jxq82Q==
+xeact@^0.0.21:
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/xeact/-/xeact-0.0.21.tgz#11441877983e52376e40dbaaf7378f471e02f8b8"
+  integrity sha512-wQI9eCHZfBQSfcCvY7h7LFLsQr29bvNKqlX2no9lCnFtqGBi42umEjA+lyyOnxPWpdg1pttTYQUx0MNuiOyZuw==
   dependencies:
     nanoid "^3.1.23"
 
